@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Shivlal_Gupta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+  function validation() {
+    var fname = document.getElementById('fname').value;
+    var lname = document.getElementById('lname').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    
+    
+    
+    
+    if(fname == ""){
+      document.getElementById('firstname').innerHTML ="Please fill the First name";
+      return false;
+
+    }
+
+    
+
+    if(!isNaN(fname)){
+      document.getElementById('firstname').innerHTML ="Only Alphabets/Character are allowed";
+      return false;
+    }
+
+
+
+    if(lname == ""){
+      document.getElementById('lastname').innerHTML ="Please fill the Last name";
+      return false;
+    }
+    if(!isNaN(lname)){
+      document.getElementById('lastname').innerHTML ="Only Alphabets/Character are allowed";
+      return false;
+    }
+
+    if(email == ""){
+      document.getElementById('emailaddress').innerHTML ="Please fill the Email address";
+      return false;
+    }
+
+    if(email.indexOf('@') <= 0 ){
+      document.getElementById('emailaddress').innerHTML ="@ Invalid Position";
+      return false;
+    }
+
+    if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.')){
+      document.getElementById('emailaddress').innerHTML =". Invalid Position";
+      return false;
+    }
+
+    if(phone == ""){
+      document.getElementById('phonenumber').innerHTML ="Please fill the Phone number";
+      return false;
+    }
+
+    if(isNaN(phone)){
+      document.getElementById('phonenumber').innerHTML ="Only Numbers are allowed";
+      return false;
+    }
+
+    if(phone.length!=10){
+      document.getElementById('phonenumber').innerHTML ="Phone number must be 10 digits only";
+      return false;
+    }
+
+
+    if(document.getElementById('website').checked){
+      var yes = document.getElementById('website').value;
+      document.getElementById('message').innerHTML ="Please type the URL in below";
+      return false;
+
+    }
+
+
+    
+
+    
+  }
+</script>
+
+<body>
+  <div class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <a class="navbar-brand" href="#"><img src="logo.png" id="logo" width="140" height="40"
+          class="d-inline-block align-top" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Contact</a> <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- horizontal line -->
+    <div class="title">Contact us</div>
+  </div>
+  <!-- vertical line -->
+
+  <div class="vertical"></div>
+
+
+
+  <!-- middle part -->
+  <div class="middle_part">
+    <div class="left_part">
+      <div class="heading">
+        Get in touch with us
+      </div>
+      <p id="small_text">Contact us for a website, Mobile application, Digital Marketing or IT support.</p>
+      <div class="address">
+        <img src="address.png" class="address_icon">
+        <p>Innovfide Technology<br>
+          Anulekha, Anurag Nagar, Tulinj,<br>
+          Nallasopara East.
+        </p>
+
+      </div>
+      <div class="email_icon">
+        <img src="email.png">
+        <p> bussiness@innovfide.com
+        </p>
+
+      </div>
+      <div class="phone_icon">
+        <img src="phone.png">
+        <p> +91 8767484648
+        </p>
+
+      </div>
+
+    </div>
+    
+
+    <!-- Right side Part Form -->
+    <div class="right_part">
+      <form method="" action="#" name="forms" onsubmit=" return validation()">
+        <div class="first_row">
+          <div class="First_name">
+            <label> First Name:<span id="star">*</span></label><br>
+            <input type="text" name="" id="fname" placeholder="Please enter your First Name"><br>
+            <span id="firstname"></span>
+
+          </div>
+          <div class="Last_name">
+            <label> Last Name:<span id="star">*</span></label><br>
+            <input type="text" name="" id="lname"><br>
+            <span id="lastname"></span>
+          </div>
+        </div>
+        <!-- email and phone -->
+        <div class="Second_row">
+          <div class="Email">
+            <label> Email:<span id="star">*</span></label><br>
+            <input type="text" name="" id="email"><br>
+            <span id="emailaddress"></span>
+          </div>
+
+          <div class="Phone">
+            <label> Phone:<span id="star">*</span></label><br>
+            <input type="text" name="" id="phone"><br>
+            <span id="phonenumber"></span>
+          </div>
+
+        </div>
+        <div class="third_row">
+          <label>Do you have website?<span id="star">*</span></label><br>
+          <input type="radio" id="website" name="have" id="yes"  value="yes">&nbsp;&nbsp;Yes &nbsp;&nbsp;
+          <input type="radio" id="website" name="have"  value="no">&nbsp;&nbsp;No &nbsp;&nbsp; <span id="message">
+            <br>
+          </span><span id="message1"></span>
+          
+        <div>
+          <div class="four_row">
+            <label>Website URL:</label><br>
+            <input type="type" id="url1" placeholder="Please enter your Website URL">
+          </div>
+          <input type="submit" id="submit" value="SUBMIT">
+      </form>
+
+    </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
